@@ -3,6 +3,7 @@
     <div id="nav">
       <ul>
         <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/create">Create Bystander</router-link></li>
         <li><router-link to="/view">List all Bystanders</router-link></li>
         <li><router-link to="/edit">Edit Existing Bystander</router-link></li>
       </ul>

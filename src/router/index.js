@@ -9,7 +9,14 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: function () {
-      return import("../components/CreateBystander")
+
+    }
+  },
+  {
+    path: '/create',
+    name: 'Create',
+    component: function () {
+      return import("../components/CreateBystander");
     }
   },
   {
