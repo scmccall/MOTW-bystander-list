@@ -27,6 +27,8 @@
 
 <script>
 
+import axios from "axios"
+
 export default {
   data() {
     return {
@@ -41,8 +43,21 @@ export default {
 
   methods : {
     handleFormSubmission : function () {
-      
-    }
+      let apiURL = "http://localhost:4000/api/create-bystander"
+
+      axios.post(apiURL, this.bystander).then(() => {
+        this.$router.push('/view');
+        this.student = {
+          name : '',
+          type: '',
+          motivation: '',
+          notes: ''
+        };
+      }).catch(err => {
+        console.log(err);
+      });
+    },
+
   }
 }
 </script>
