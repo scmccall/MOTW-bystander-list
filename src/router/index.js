@@ -7,28 +7,27 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: function () {
-
     }
   },
   {
     path: '/create',
-    name: 'Create',
+    name: 'create',
     component: function () {
       return import("../components/CreateBystander");
     }
   },
   {
     path: '/view',
-    name: 'View',
+    name: 'view',
     component: function () {
       return import("../components/ListBystanders") 
     }
   },
   {
-    path: '/edit/:name',
-    name: 'Edit',
+    path: '/edit/:id',
+    name: 'edit',
     component: function () {
       return import("../components/EditBystander") 
     }

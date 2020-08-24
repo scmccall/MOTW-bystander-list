@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>CreateBystander</p>
-    <form @submit.prevent="handleFormSubmission()">
+    <form @submit.prevent="handleCreateBystanderFormSubmission()">
       <div>
         <label>Name</label>
         <input type="text" v-model="bystander.name" required>
@@ -16,7 +16,7 @@
       </div>
       <div>
         <label>Notes</label>
-        <input type="textarea" v-model="bystander.notes" required>
+        <textarea v-model="bystander.notes" required></textarea>
       </div>
       <div>
         <button>Create Bystander</button>
@@ -42,7 +42,7 @@ export default {
   },
 
   methods : {
-    handleFormSubmission : function () {
+    handleCreateBystanderFormSubmission : function () {
       let apiURL = "http://localhost:4000/api/create-bystander"
 
       axios.post(apiURL, this.bystander).then(() => {
