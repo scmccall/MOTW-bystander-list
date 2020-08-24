@@ -45,11 +45,11 @@ bystanderRoute.route('/update-bystander/:id').post((req, res, next) => {
     } else {
       res.json(data);
       console.log("Bystander successfully updated.");
-  };
+    };
+  });
 });
 
 // Delete bystander
-
 bystanderRoute.route('/delete-bystander/:id').delete((req, res, next) => {
   BystanderModel.findByIdAndRemove(req.params.id, (err, data) => {
     if (err) {
@@ -62,4 +62,4 @@ bystanderRoute.route('/delete-bystander/:id').delete((req, res, next) => {
   });
 });
 
-module.exports = bystanderRoute;
+module.exports = bystanderRoute
