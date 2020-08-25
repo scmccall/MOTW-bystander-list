@@ -19,7 +19,7 @@
         <textarea v-model="bystander.notes" required></textarea>
       </div>
       <div>
-        <button>Create Bystander</button>
+        <button class="button is-link">Create Bystander</button>
       </div>
     </form>
   </div>
