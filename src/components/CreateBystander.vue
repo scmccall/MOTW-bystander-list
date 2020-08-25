@@ -1,26 +1,51 @@
 <template>
   <div>
-    <p>CreateBystander</p>
+    {{ bystander }}
+
     <form @submit.prevent="handleCreateBystanderFormSubmission()">
-      <div>
-        <label>Name</label>
-        <input type="text" v-model="bystander.name" required>
+
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input type="text" v-model="bystander.name" required>
+        </div>
       </div>
-      <div>
-        <label>Type</label>
-        <input type="text" v-model="bystander.type" required>
+
+      <div class="field">
+        <label class="label">Type</label>
+        <div class="control">
+          <div class="select">
+            <select v-model="bystander.type">
+              <option disabled selected>- Choose a Bystander type -</option>
+              <option v-for="type in bystanderTypes" :key="type._id">
+                {{ type.name }}
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Motivation</label>
-        <input type="text" v-model="bystander.moitvation" required>
+
+      <div class="field">
+        <label class="label">Motivation</label>
+        <div class="control">
+          <input type="text" v-model="bystander.motivation" required>
+          <!-- <input class="input is-static" type="text" v-model="bystander.moitvation"> -->
+        </div>
       </div>
-      <div>
-        <label>Notes</label>
-        <textarea v-model="bystander.notes" required></textarea>
+
+      <div class="field">
+        <label class="label">Notes</label>
+        <div class="control">
+          <textarea v-model="bystander.notes" required></textarea>
+        </div>
       </div>
-      <div>
-        <button class="button is-link">Create Bystander</button>
+      
+      <div class="field">
+        <div class="control">
+          <button class="">Create Bystander</button>
+        </div>
       </div>
+
     </form>
   </div>
 </template>
@@ -37,6 +62,46 @@ export default {
         type : '',
         motivation : '',
         notes : '',
+      },
+
+      bystanderTypes : {
+        Busybody : {
+          name : 'Busybody',
+          motivation : 'to interfere in other people\'s plans'
+        },
+        Detective : {
+          name : 'Detective',
+          motivation : 'to rule out explainations'
+        },
+        Gossip : {
+          name : 'Gossip',
+          motivation : 'to pass on rumors'
+        },
+        Helper : {
+          name : 'Helper',
+          motivation : 'to join the hunt'
+        },
+        Innocent : {
+          name : 'Innocent',
+          motivation : 'to do the right thing'
+        },
+        Official : {
+          name : 'Official',
+          motivation : 'to be suspicious'
+        },
+        Skeptic : {
+          name: 'Skeptic',
+          motivation : 'to deny supernatural explainations'
+        },
+        Victim : {
+          name : 'Victim',
+          motivation: 'to put themselves in danger'
+        },
+        Witness : {
+          name : 'Witness',
+          motivation : 'to reveal information'
+        }
+
       }
     }
   },
@@ -48,10 +113,10 @@ export default {
       axios.post(apiURL, this.bystander).then(() => {
         this.$router.push('/view');
         this.student = {
-          name : '',
-          type: '',
-          motivation: '',
-          notes: ''
+          name : String,
+          type : String,
+          motivation : String,
+          notes : String
         };
       }).catch(err => {
         console.log(err);
