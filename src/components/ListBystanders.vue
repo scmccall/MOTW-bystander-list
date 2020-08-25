@@ -1,19 +1,31 @@
 <template>
   <div>
-    <p>ListBystanders</p>
-    <!-- {{ Bystanders }} -->
-    <!-- {{ console }} -->
-    <ul>
-      <li v-for="bystander in Bystanders" :key="bystander._id">
-        {{ bystander.name }}
-        {{ bystander.type }}
-        {{ bystander.motivation }}
-        {{ bystander.notes }}
-        <router-link :to="{ name: 'edit', params: {id: bystander._id} }">Edit</router-link>
-        <button @click.prevent="deleteBystander(bystander._id)">Delete</button>
 
-      </li>
-    </ul>
+    <table class="table">
+      <!-- Table Headers -->
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Motivation</th>
+          <th>Notes</th>
+          <th>Controls</th>
+        </tr>
+      </thead>
+      <!-- Table Body -->
+      <tbody>
+        <tr v-for="bystander in Bystanders" :key="bystander._id">
+          <td>{{ bystander.name }}</td>
+          <td>{{ bystander.type }}</td>
+          <td>{{ bystander.motivation }}</td>
+          <td>{{ bystander.notes }}</td>
+          <td>
+            <router-link class="button is-info is-light is-small" :to="{ name: 'edit', params: {id: bystander._id} }">Edit</router-link>
+            <button class="button is-danger is-light is-small" @click.prevent="deleteBystander(bystander._id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 

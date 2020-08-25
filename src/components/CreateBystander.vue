@@ -1,52 +1,69 @@
 <template>
   <div>
-    {{ bystander }}
-
-    <form @submit.prevent="handleCreateBystanderFormSubmission()">
-
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input type="text" v-model="bystander.name" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Type</label>
-        <div class="control">
-          <div class="select">
-            <select v-model="bystander.type">
-              <option disabled selected>- Choose a Bystander type -</option>
-              <option v-for="type in bystanderTypes" :key="type._id">
-                {{ type.name }}
-              </option>
-            </select>
+    <div class="container">
+      <div class="">
+        <form @submit.prevent="handleCreateBystanderFormSubmission()">
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Name</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <input type="text" v-model="bystander.name" required>
+              </div>
+            </div>
           </div>
-        </div>
+    
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Type</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <div class="select is-small">
+                  <select v-model="bystander.type">
+                    <option disabled selected>- Choose a Bystander type -</option>
+                    <option v-for="type in bystanderTypes" :key="type._id">
+                      {{ type.name }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Motivation</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <input type="text" v-model="bystander.motivation" required>
+                <!-- <input class="input is-static" type="text" v-model="bystander.moitvation"> -->
+              </div>
+            </div>
+          </div>
+    
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Notes</label>
+            </div>
+            <div class="field-body">
+              <div class="control">
+                <textarea class="textarea" v-model="bystander.notes" required></textarea>
+              </div>
+            </div>
+          </div>
+          
+          <div class="field">
+            <div class="control">
+              <button class="">Create Bystander</button>
+            </div>
+          </div>
+    
+        </form>
       </div>
-
-      <div class="field">
-        <label class="label">Motivation</label>
-        <div class="control">
-          <input type="text" v-model="bystander.motivation" required>
-          <!-- <input class="input is-static" type="text" v-model="bystander.moitvation"> -->
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Notes</label>
-        <div class="control">
-          <textarea v-model="bystander.notes" required></textarea>
-        </div>
-      </div>
-      
-      <div class="field">
-        <div class="control">
-          <button class="">Create Bystander</button>
-        </div>
-      </div>
-
-    </form>
+    </div>
   </div>
 </template>
 
@@ -128,5 +145,8 @@ export default {
 </script>
 
 <style>
-
+.form-width-container {
+  margin: auto;
+  max-width: 800px
+}
 </style>
