@@ -16,14 +16,10 @@
         <nav class="tabs is-toggle is-medium is-fullwidth">
           <ul>
             <li class="is-active">
-              <a href="/create">
-                Create new Bystander
-              </a>
+              <router-link to="/create">Create Bystander</router-link>
             </li>
             <li>
-              <a href="/view">
-                List all Bystanders
-              </a>
+              <router-link to="/view">List all Bystanders</router-link>
             </li>
             <li>
               <a href="/">
@@ -34,16 +30,6 @@
         </nav>
       </div>
     </section>
-
-
-    <div id="nav">
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/create">Create Bystander</router-link></li>
-        <li><router-link to="/view">List all Bystanders</router-link></li>
-        <li><router-link to="/edit">Edit Existing Bystander</router-link></li>
-      </ul>
-    </div>
     <router-view/>
     <footer class="footer">
       <div class="content has-centered-text">
