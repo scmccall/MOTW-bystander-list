@@ -9,7 +9,7 @@ let bystanderSchema = new Schema({
     type: String
   },
   motivation: {
-    type: Number
+    type: String
   },
   notes: {
     type: String
