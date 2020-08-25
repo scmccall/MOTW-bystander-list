@@ -1,5 +1,41 @@
 <template>
   <div id="app">
+    <!-- Header -->
+    <section class="hero is-warning is-bold">
+      <div clas="hero-body">
+        <div class="container">
+          <h1 class="title">
+            Bystander Tracker
+          </h1>
+          <h2 class="subtitle">
+            for Monster of the Week games
+          </h2>
+        </div>
+      </div>
+      <div class="hero-foot">
+        <nav class="tabs is-toggle is-medium is-fullwidth">
+          <ul>
+            <li class="is-active">
+              <a href="/create">
+                Create new Bystander
+              </a>
+            </li>
+            <li>
+              <a href="/view">
+                List all Bystanders
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                What is Monster of the week?
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+
     <div id="nav">
       <ul>
         <li><router-link to="/">Home</router-link></li>
@@ -9,6 +45,13 @@
       </ul>
     </div>
     <router-view/>
+    <footer class="footer">
+      <div class="content has-centered-text">
+        <p>
+          Developed by <a href="http://smccall.com">Sam McCall</a>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
