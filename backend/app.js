@@ -17,7 +17,7 @@ mongoose.connect(database.db, {
   }
 );
 
-const bystanderAPI = require("../backend/routes/bystander.route");
+const bystanderAPI = require("./routes/bystander.route");
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

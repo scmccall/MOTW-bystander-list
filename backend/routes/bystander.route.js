@@ -25,16 +25,6 @@ const Bystander = require('../models/Bystander');
   });
  });
 
-//  bystanderRoute.route('/edit-bystander/:id').get((req, res) => {
-//   BystanderModel.findById(req.params.id, (err, data) => {
-//     if (err) {
-//       return next(err);
-//     } else {
-//       res.json(data);
-//     };
-//   });
-//  });
-
 bystanderRoute.route('/edit-bystander/:id').get((req, res) => {
   BystanderModel.findById(req.params.id, (err, data) => {
     if (err) {
