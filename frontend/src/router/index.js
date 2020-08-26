@@ -10,6 +10,10 @@ Vue.use(VueRouter)
     name: 'home',
     component: function () {
       return import("../components/Home");
+    },
+    meta : {
+      auth : 'false',
+      title : 'Home'
     }
   },
   {
@@ -17,13 +21,21 @@ Vue.use(VueRouter)
     name: 'create',
     component: function () {
       return import("../components/CreateBystander");
+    },
+    meta : {
+      auth : 'false',
+      title : 'Create Bystander'
     }
   },
   {
     path: '/view',
     name: 'view',
     component: function () {
-      return import("../components/ListBystanders") 
+      return import("../components/ListBystanders")
+    },
+    meta : {
+      auth : 'false',
+      title : 'View All Bystanders'
     }
   },
   {
@@ -31,6 +43,10 @@ Vue.use(VueRouter)
     name: 'edit',
     component: function () {
       return import("../components/EditBystander") 
+    },
+    meta : {
+      auth : 'false',
+      title : 'Edit Bystander'
     }
   },
   {
@@ -38,6 +54,10 @@ Vue.use(VueRouter)
     name: 'edit',
     component : function () {
       return import("../components/WhatIsMOTW")
+    },
+    meta : {
+      auth : 'false',
+      title : 'What is Monster of the Week?'
     }
   }
 ]
