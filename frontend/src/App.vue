@@ -77,6 +77,7 @@
 
 <script>
 export default {
+  name : "Bystander Tracker",
   data : function () {
     return {
       navBarIsActive: false,
