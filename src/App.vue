@@ -1,9 +1,51 @@
 <template>
   <div id="app">
+    <nav class="navbar is-warning is-bold">
+      <div class="navbar-brand">
+        <a class="navbar-burger"
+          :class="{ 'is-active' : navBarIsActive }"
+          @click="navBarIsActive = !navBarIsActive">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+
+      <!-- Right-hand side -->
+      <div class="navbar-menu is-warning"
+          :class="{ 'is-active' : navBarIsActive }">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <router-link to="/">
+              Home
+            </router-link>
+          </div>
+          <div class="navbar-item">
+            <router-link to="/what-is-motw">
+              What is MOTW?
+            </router-link>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Bystanders
+            </a>
+            <div class="navbar-dropdown">
+              <router-link class="navbar-item" to="/create">
+                Create new Bystander
+              </router-link>
+              <router-link class="navbar-item" to="/view">
+                View all Bystanders
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
     <!-- Header -->
-    <section class="hero is-warning is-bold">
-      <div clas="hero-body">
-        <div class="container">
+    <section class="hero is-warning">
+      <div class="hero-body">
+        <div class="container has-text-centered">
           <h1 class="title">
             Bystander Tracker
           </h1>
@@ -12,25 +54,12 @@
           </h2>
         </div>
       </div>
-      <div class="hero-foot">
-        <nav class="tabs is-toggle is-medium is-fullwidth">
-          <ul>
-            <li class="is-active">
-              <router-link to="/create">Create Bystander</router-link>
-            </li>
-            <li>
-              <router-link to="/view">List all Bystanders</router-link>
-            </li>
-            <li>
-              <a href="/">
-                What is Monster of the week?
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </section>
+
+    <!-- Component View -->
     <router-view/>
+
+    <!-- Footer -->
     <footer class="footer">
       <div class="content has-centered-text">
         <p>
@@ -40,6 +69,16 @@
     </footer>
   </div>
 </template>
+
+<script>
+export default {
+  data : function () {
+    return {
+      navBarIsActive: false,
+    }
+  }
+}
+</script>
 
 <style>
 #app {
@@ -60,5 +99,14 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.hero {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.navbar {
+  padding-right: 80px;
 }
 </style>
