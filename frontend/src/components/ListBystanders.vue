@@ -41,7 +41,7 @@ export default {
     }
   },
   created() {
-    let apiURL = "http://localhost:4000/api";
+    let apiURL = "https://tranquil-eyrie-85945.herokuapp.com/api";
     axios.get(apiURL).then(res => {
       // this.console = res.data;
       this.Bystanders = res.data;
@@ -52,7 +52,7 @@ export default {
 
   methods : {
     deleteBystander : function (id) {
-      let apiURl = `http://localhost:4000/api/delete-bystander/${id}`;
+      let apiURl = `https://tranquil-eyrie-85945.herokuapp.com/api/delete-bystander/${id}`;
       let indexOfArrayItem = this.Bystanders.findIndex( i => i._id === id);
 
       axios.delete(apiURl).then(() => {

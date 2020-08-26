@@ -124,7 +124,7 @@ export default {
   },
   
   created() {
-    let apiURL = `http://localhost:4000/api/edit-bystander/${this.$route.params.id}`;
+    let apiURL = `https://tranquil-eyrie-85945.herokuapp.com/api/edit-bystander/${this.$route.params.id}`;
 
     axios.get(apiURL).then((res) => {
       this.bystander = res.data;

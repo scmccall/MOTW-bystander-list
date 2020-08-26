@@ -132,7 +132,7 @@ export default {
 
   methods : {
     handleCreateBystanderFormSubmission : function () {
-      let apiURL = "http://localhost:4000/api/create-bystander"
+      let apiURL = "https://tranquil-eyrie-85945.herokuapp.com/api/create-bystander"
 
       axios.post(apiURL, this.bystander).then(() => {
         this.$router.push('/view');
