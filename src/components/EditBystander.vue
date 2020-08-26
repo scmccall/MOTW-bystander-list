@@ -1,6 +1,11 @@
 <template>
-  <div>
-    {{ bystander }}
+  <div class="content">
+    <h1 class="title">
+      Edit Bystander
+    </h1>
+    <p class="content">
+      Edit the information below, and any changes will be updated immediately.
+    </p>
     <form @submit.prevent="handleUpdateBystanderFormSubmission()">
       <div class="field is-horizontal">
         <div class="field-label">
@@ -8,7 +13,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="text" v-model="bystander.name" required>
+            <input class="input" type="text" v-model="bystander.name" required>
           </div>
         </div>
       </div>
@@ -37,7 +42,7 @@
         </div>
         <div class="field-body">
           <div class="control">
-            <input type="text" v-model="bystander.motivation" required>
+            <input class="input" type="text" v-model="bystander.motivation" required>
             <!-- <input class="input is-static" type="text" v-model="bystander.moitvation"> -->
           </div>
         </div>
@@ -58,7 +63,7 @@
         <div class="field-label"></div>
         <div class="field-body">
           <div class="control">
-            <button class="button is-success is-light is-group-centered">Create Bystander</button>
+            <button class="button is-success is-light is-group-centered">Submit Changes</button>
           </div>
         </div>
       </div>
@@ -71,12 +76,50 @@
 
 import axios from 'axios';
 
-
-
 export default {
   data() {
     return {
       bystander : {},
+
+      bystanderTypes : {
+        Busybody : {
+          name : 'Busybody',
+          motivation : 'to interfere in other people\'s plans'
+        },
+        Detective : {
+          name : 'Detective',
+          motivation : 'to rule out explainations'
+        },
+        Gossip : {
+          name : 'Gossip',
+          motivation : 'to pass on rumors'
+        },
+        Helper : {
+          name : 'Helper',
+          motivation : 'to join the hunt'
+        },
+        Innocent : {
+          name : 'Innocent',
+          motivation : 'to do the right thing'
+        },
+        Official : {
+          name : 'Official',
+          motivation : 'to be suspicious'
+        },
+        Skeptic : {
+          name: 'Skeptic',
+          motivation : 'to deny supernatural explainations'
+        },
+        Victim : {
+          name : 'Victim',
+          motivation: 'to put themselves in danger'
+        },
+        Witness : {
+          name : 'Witness',
+          motivation : 'to reveal information'
+        }
+
+      }
     }
   },
   

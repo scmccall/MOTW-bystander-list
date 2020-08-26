@@ -14,7 +14,7 @@
           </div>
           <div class="field-body">
             <div class="control">
-              <input type="text" v-model="bystander.name" required>
+              <input class="input" type="text" v-model="bystander.name" required>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@
           </div>
           <div class="field-body">
             <div class="control">
-              <input type="text" v-model="bystander.motivation" required>
+              <input class="input" type="text" v-model="bystander.motivation" required>
               <!-- <input class="input is-static" type="text" v-model="bystander.moitvation"> -->
             </div>
           </div>
