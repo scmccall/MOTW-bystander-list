@@ -58,7 +58,11 @@
     </section>
 
     <!-- Component View -->
-    <router-view/>
+   <div class="columns is-centered">
+     <div class="column is-two-thirds">
+      <router-view/>
+     </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

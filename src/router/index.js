@@ -9,6 +9,7 @@ Vue.use(VueRouter)
     path: '/',
     name: 'home',
     component: function () {
+      return import("../components/Home");
     }
   },
   {
@@ -32,6 +33,13 @@ Vue.use(VueRouter)
       return import("../components/EditBystander") 
     }
   },
+  {
+    path: '/what-is-motw',
+    name: 'edit',
+    component : function () {
+      return import("../components/WhatIsMOTW")
+    }
+  }
 ]
 
 const router = new VueRouter({
