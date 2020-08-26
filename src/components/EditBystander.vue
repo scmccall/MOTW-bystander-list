@@ -1,27 +1,68 @@
 <template>
   <div>
-    <p>EditBystander</p>
     {{ bystander }}
     <form @submit.prevent="handleUpdateBystanderFormSubmission()">
-      <div>
-        <label>Name</label>
-        <input type="text" v-model="bystander.name" required>
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Name</label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="text" v-model="bystander.name" required>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Type</label>
-        <input type="text" v-model="bystander.type" required>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Type</label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <div class="select is-small">
+              <select v-model="bystander.type">
+                <option disabled selected>- Choose a Bystander type -</option>
+                <option v-for="type in bystanderTypes" :key="type._id">
+                  {{ type.name }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Motivation</label>
-        <input type="text" v-model="bystander.moitvation" required>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Motivation</label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <input type="text" v-model="bystander.motivation" required>
+            <!-- <input class="input is-static" type="text" v-model="bystander.moitvation"> -->
+          </div>
+        </div>
       </div>
-      <div>
-        <label>Notes</label>
-        <textarea v-model="bystander.notes" required></textarea>
+
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Notes</label>
+        </div>
+        <div class="field-body">
+          <div class="control">
+            <textarea class="textarea" v-model="bystander.notes" required></textarea>
+          </div>
+        </div>
       </div>
-      <div>
-        <button>Edit</button>
+      
+      <div class="field is-horizontal">
+        <div class="field-label"></div>
+        <div class="field-body">
+          <div class="control">
+            <button class="button is-success is-light is-group-centered">Create Bystander</button>
+          </div>
+        </div>
       </div>
+
     </form>
   </div>
 </template>
@@ -29,6 +70,8 @@
 <script>
 
 import axios from 'axios';
+
+
 
 export default {
   data() {
@@ -41,7 +84,7 @@ export default {
     let apiURL = `http://localhost:4000/api/edit-bystander/${this.$route.params.id}`;
 
     axios.get(apiURL).then((res) => {
-      this.student = res.data;
+      this.bystander = res.data;
     });
   },
 
@@ -59,18 +102,7 @@ export default {
   }
 }
 </script>
-   methods: {
-        handleUpdateForm() {
-            let apiURL = `http://localhost:4000/api/update-student/${this.$route.params.id}`;
 
-            axios.post(apiURL, this.student).then((res) => {
-                console.log(res)
-                this.$router.push('/view')
-            }).catch(error => {
-                console.log(error)
-            });
-        }
-    }
 <style>
 
 </style>
