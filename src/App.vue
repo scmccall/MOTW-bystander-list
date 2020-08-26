@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- Navbar -->
     <nav class="navbar is-warning is-bold">
       <div class="navbar-brand">
         <a class="navbar-burger"
@@ -20,11 +21,6 @@
               Home
             </router-link>
           </div>
-          <div class="navbar-item">
-            <router-link to="/what-is-motw">
-              What is MOTW?
-            </router-link>
-          </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">
               Bystanders
@@ -38,11 +34,16 @@
               </router-link>
             </div>
           </div>
+          <div class="navbar-item">
+            <router-link to="/what-is-motw">
+              What is MOTW?
+            </router-link>
+          </div>
         </div>
       </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Hero -->
     <section class="hero is-warning">
       <div class="hero-body">
         <div class="container has-text-centered">
@@ -61,7 +62,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <div class="content has-centered-text">
+      <div class="content has-text-centered">
         <p>
           Developed by <a href="http://smccall.com">Sam McCall</a>
         </p>
