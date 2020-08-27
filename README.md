@@ -1,19 +1,16 @@
-# motw-bystanders
+# Bystander Tracker
 
-## Project setup
-```
-npm install
-```
+A tool for keeping track of your Bystander NPCs in a game of Monster of the Week.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Live Version
 
-### Compiles and minifies for production
-```
-npm run build
-```
+The application is currently live at [bystander-tracker.smccall.com/](bystander-tracker.smccall.com/).
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Tools Used
+
+- [Vue.js](https://vuejs.org) is used for the front-end.
+- [Bulma](https://bulma.io) provides styling and layout tools.
+- [Node.js](https://nodejs.org) used as a back-end server, with [express](https://expressjs.com/) and [axios](https://github.com/axios/axios) to handle HTTP calls.
+- Database stored with [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), with [mongoose](https://mongoosejs.com/) as the ODM framework.
+- Front-end hosting on [Netlify](https://www.netlify.com/).
+- Back-end server hosting on [Heroku](https://www.heroku.com).
