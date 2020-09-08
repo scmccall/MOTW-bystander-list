@@ -4,7 +4,7 @@ A tool for keeping track of your Bystander NPCs in a game of Monster of the Week
 
 # Live Version
 
-The application is currently live at [bystander-tracker.smccall.com/](bystander-tracker.smccall.com/).
+The application is currently live at [bystander-tracker.smccall.com](bystander-tracker.smccall.com).
 
 ## Tools Used
 
